@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaskFlow - Simple Task Management</title>
+<style>
+
+  /* ===== Basic Reset ===== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    color: #333333;
+    line-height: 1.6;
+  }
+
+  /* ===== Header ===== */
+  header {
+    background-color: #2D3A8C;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header .logo {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  header nav ul {
+    list-style: none;
+    display: flex;
+  }
+
+  header nav ul li {
+    margin-left: 25px;
+  }
+
+  header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  header nav ul li a:hover {
+    color: #FF9F43;
+  }
+
+  /* ===== Hero Section ===== */
+  .hero {
+    background-color: #F0F2FA;
+    text-align: center;
+    padding: 80px 20px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #2D3A8C;
+  }
+
+  .hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 25px auto;
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: #FF9F43;
+    color: #ffffff;
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: #e8892e;
+  }
+
+  /* ===== About Section ===== */
+  .about {
+    padding: 60px 40px;
+    text-align: center;
+  }
+
+  .about h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #2D3A8C;
+  }
+
+  .about p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 16px;
+  }
+
+  /* ===== Features Section (Columns) ===== */
+  .features {
+    background-color: #F0F2FA;
+    padding: 60px 40px;
+  }
+
+  .features h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: #2D3A8C;
+  }
+
+  .feature-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .feature-box {
+    background-color: #ffffff;
+    flex: 1;
+    min-width: 250px;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .feature-box .icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .feature-box h3 {
+    margin-bottom: 10px;
+    color: #2D3A8C;
+  }
+
+  /* ===== Testimonials Section ===== */
+  .testimonials {
+    background-color: #F0F2FA;
+    padding: 60px 40px;
+    text-align: center;
+  }
+
+  .testimonials h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: #2D3A8C;
+  }
+
+  .testimonial-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .testimonial-box {
+    background-color: #ffffff;
+    flex: 1;
+    min-width: 250px;
+    padding: 25px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .testimonial-box p {
+    font-style: italic;
+    margin-bottom: 15px;
+  }
+
+  .testimonial-box .name {
+    font-weight: bold;
+    color: #2D3A8C;
+    font-style: normal;
+  }
+
+  /* ===== FAQ Section ===== */
+  .faq {
+    padding: 60px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: #2D3A8C;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid #dddddd;
+    padding: 15px 0;
+  }
+
+  .faq-item h3 {
+    color: #2D3A8C;
+    margin-bottom: 8px;
+  }
+
+  /* ===== Call To Action Section ===== */
+  .cta {
+    background-color: #2D3A8C;
+    color: #ffffff;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .cta h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .cta p {
+    margin-bottom: 25px;
+  }
+
+  /* ===== Footer ===== */
+  footer {
+    background-color: #1E2761;
+    color: #ffffff;
+    padding: 40px 40px 20px 40px;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 20px;
+  }
+
+  .footer-column h4 {
+    margin-bottom: 15px;
+  }
+
+  .footer-column ul {
+    list-style: none;
+  }
+
+  .footer-column ul li {
+    margin-bottom: 8px;
+  }
+
+  .footer-column ul li a {
+    color: #dddddd;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  .footer-column ul li a:hover {
+    color: #FF9F43;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #3a4499;
+    padding-top: 15px;
+    font-size: 14px;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 700px) {
+    header {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    header nav ul {
+      margin-top: 15px;
+      justify-content: center;
+    }
+
+    header nav ul li {
+      margin: 0 10px;
+    }
+
+    .feature-container,
+    .testimonial-container,
+    .footer-container {
+      flex-direction: column;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- ===== Header Section ===== -->
+  <header>
+    <div class="logo">TaskFlow</div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero">
+    <h1>Organize Your Work, One Task at a Time</h1>
+    <p>TaskFlow helps individuals and small teams plan their day, track progress, and hit deadlines without the clutter.</p>
+    <a href="#features" class="btn">Get Started Free</a>
+  </section>
+
+  <!-- ===== About Section ===== -->
+  <section class="about" id="about">
+    <h2>What is TaskFlow?</h2>
+    <p>TaskFlow is a simple task management tool built for students, freelancers, and small teams. Create task lists, set due dates, and track your progress from one clean dashboard — no complicated setup required.</p>
+  </section>
+
+  <!-- ===== Features Section (Columns) ===== -->
+  <section class="features" id="features">
+    <h2>Features</h2>
+    <div class="feature-container">
+      <div class="feature-box">
+        <div class="icon">📝</div>
+        <h3>Create Tasks</h3>
+        <p>Add tasks in seconds with titles, due dates, and priority levels.</p>
+      </div>
+      <div class="feature-box">
+        <div class="icon">📅</div>
+        <h3>Track Deadlines</h3>
+        <p>See upcoming deadlines at a glance so nothing slips through the cracks.</p>
+      </div>
+      <div class="feature-box">
+        <div class="icon">📊</div>
+        <h3>Monitor Progress</h3>
+        <p>Mark tasks as in-progress or complete and watch your productivity grow.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Testimonials Section ===== -->
+  <section class="testimonials">
+    <h2>What Our Users Say</h2>
+    <div class="testimonial-container">
+      <div class="testimonial-box">
+        <p>"TaskFlow keeps my freelance projects organized without feeling overwhelming."</p>
+        <p class="name">- Ayesha K.</p>
+      </div>
+      <div class="testimonial-box">
+        <p>"Simple, clean, and exactly what I needed for tracking college assignments."</p>
+        <p class="name">- Rohan M.</p>
+      </div>
+      <div class="testimonial-box">
+        <p>"Our small team switched to the Team plan and it's made handoffs so much easier."</p>
+        <p class="name">- Priya S.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ Section ===== -->
+  <section class="faq" id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>Is TaskFlow free to use?</h3>
+      <p>Yes, TaskFlow is completely free to sign up and start organizing your tasks.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Does TaskFlow work on mobile?</h3>
+      <p>Yes, TaskFlow is fully responsive and works on any device with a browser.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I use TaskFlow with my team?</h3>
+      <p>Yes, you can create shared projects and assign tasks to teammates.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is my data backed up?</h3>
+      <p>Yes, all your tasks are automatically saved so you never lose your progress.</p>
+    </div>
+  </section>
+
+  <!-- ===== Call To Action Section ===== -->
+  <section class="cta">
+    <h2>Start Organizing Your Tasks Today</h2>
+    <p>Join thousands of users who plan their day with TaskFlow.</p>
+    <a href="#about" class="btn">Get Started Free</a>
+  </section>
+
+  <!-- ===== Footer Section ===== -->
+  <footer id="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h4>TaskFlow</h4>
+        <p>Simple task management for individuals and small teams.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@taskflow.com">hello@taskflow.com</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 TaskFlow. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
