@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Priyanshu Gairola — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAFA;
+    --card:#FFFFFF;
+    --ink:#1A1A1A;
+    --muted:#666666;
+    --accent:#4F46E5;
+    --border:#E5E5E5;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ font-family:'Inter', sans-serif; background:var(--bg); color:var(--ink); line-height:1.6; }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width:800px; margin:0 auto; padding:0 20px; }
+  h1,h2,h3{ font-weight:700; }
+
+  /* NAV */
+  nav{ border-bottom:1px solid var(--border); position:sticky; top:0; background:var(--bg); }
+  nav .wrap{ display:flex; justify-content:space-between; align-items:center; height:60px; }
+  .brand{ font-weight:800; }
+  nav ul{ display:flex; gap:24px; list-style:none; font-size:0.9rem; }
+  nav a:hover{ color:var(--accent); }
+
+  /* HERO */
+  .hero{ padding:60px 0 40px; }
+  .hero h1{ font-size:2rem; margin-bottom:12px; }
+  .hero p{ color:var(--muted); max-width:55ch; margin-bottom:8px; }
+  .hero .loc{ font-size:0.85rem; color:var(--muted); margin-bottom:24px; }
+  .btn{ display:inline-block; padding:10px 20px; border-radius:6px; font-weight:600; font-size:0.9rem; }
+  .btn-fill{ background:var(--accent); color:#fff; }
+  .btn-outline{ border:1px solid var(--border); margin-left:10px; }
+
+  section{ padding:36px 0; border-top:1px solid var(--border); }
+  h2{ font-size:1.3rem; margin-bottom:20px; }
+
+  /* CARD */
+  .card{ border:1px solid var(--border); border-radius:8px; padding:20px; background:var(--card); margin-bottom:14px; }
+  .card:last-child{ margin-bottom:0; }
+  .card h3{ font-size:1rem; margin-bottom:4px; }
+  .card .meta{ font-size:0.82rem; color:var(--accent); font-weight:600; margin-bottom:2px; }
+  .card .sub-meta{ font-size:0.82rem; color:var(--muted); margin-bottom:10px; }
+  .card ul{ margin-left:18px; color:var(--muted); font-size:0.9rem; }
+  .card li{ margin-bottom:4px; }
+
+  /* SKILLS */
+  .skill-group{ margin-bottom:18px; }
+  .skill-group:last-child{ margin-bottom:0; }
+  .skill-group h3{ font-size:0.85rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:8px; }
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chips span{ font-size:0.8rem; padding:5px 12px; border-radius:20px; border:1px solid var(--border); }
+
+  /* PROJECTS */
+  .project-tags{ display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; }
+  .project-tags span{ font-size:0.72rem; font-weight:600; color:var(--accent); border:1px solid var(--accent); padding:3px 10px; border-radius:20px; }
+
+  /* CONTACT */
+  .contact{ text-align:center; padding:50px 0; }
+  .contact p{ color:var(--muted); margin-bottom:24px; }
+
+  footer{ text-align:center; padding:24px 0; color:var(--muted); font-size:0.82rem; }
+
+  @media(max-width:600px){
+    nav ul{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Priyanshu Gairola</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Priyanshu Gairola</h1>
+    <p>Computer Science undergraduate with strong foundations in Java, Data Structures, Algorithms, DBMS, and Operating Systems. Experienced in building Java applications using JDBC and MySQL.</p>
+    <div class="loc">📍 Dehradun, Uttarakhand, India</div>
+    <a class="btn btn-fill" href="#projects">View Projects</a>
+    <a class="btn btn-outline" href="#contact">Contact Me</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p style="color:var(--muted);">I'm a Computer Science undergraduate at Uttaranchal University, currently pursuing my B.Tech (2023–2027) with a CGPA of 8.51/10. I'm passionate about software development and problem-solving, and I'm looking for opportunities to apply my technical skills in a development role.</p>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2>Education</h2>
+    <div class="card">
+      <h3>Bachelor of Technology, Computer Science &amp; Engineering</h3>
+      <div class="meta">Uttaranchal University</div>
+      <div class="sub-meta">August 2023 – June 2027 · 8.51 / 10 CGPA</div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <div class="card">
+      <h3>Java Internship (Training + Project)</h3>
+      <div class="meta">MSME Certified</div>
+      <div class="sub-meta">July 2025 – September 2025</div>
+      <ul>
+        <li>Completed industry-oriented training in Core Java and OOP concepts.</li>
+        <li>Built Java applications covering inheritance, polymorphism, and exception handling.</li>
+        <li>Gained hands-on experience with Java development tools and project implementation.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <div class="skill-group">
+      <h3>Programming Languages</h3>
+      <div class="chips"><span>Java</span><span>C++</span><span>Python</span><span>SQL</span><span>JavaScript</span></div>
+    </div>
+    <div class="skill-group">
+      <h3>Java Technologies</h3>
+      <div class="chips"><span>Core Java</span><span>OOPs</span><span>Collections Framework</span><span>Exception Handling</span><span>JDBC</span></div>
+    </div>
+    <div class="skill-group">
+      <h3>Databases &amp; Web</h3>
+      <div class="chips"><span>MySQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+    </div>
+    <div class="skill-group">
+      <h3>Tools &amp; Core Subjects</h3>
+      <div class="chips"><span>Git</span><span>GitHub</span><span>Eclipse</span><span>IntelliJ IDEA</span><span>VS Code</span><span>DSA</span><span>DBMS</span><span>OS</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>Student Management System</h3>
+      <div class="sub-meta">August 2025</div>
+      <ul>
+        <li>Managed student records and academic information efficiently.</li>
+        <li>Implemented CRUD operations using Java, JDBC, and MySQL.</li>
+        <li>Designed a structured relational database for secure storage.</li>
+      </ul>
+      <div class="project-tags"><span>Java</span><span>JDBC</span><span>MySQL</span></div>
+    </div>
+    <div class="card">
+      <h3>ATM Management System</h3>
+      <div class="sub-meta">September 2025</div>
+      <ul>
+        <li>Console-based app supporting balance inquiry, withdrawal, deposit, and history.</li>
+        <li>Applied encapsulation, inheritance, and polymorphism.</li>
+        <li>Implemented input validation and exception handling.</li>
+      </ul>
+      <div class="project-tags"><span>Java</span><span>OOP</span></div>
+    </div>
+    <div class="card">
+      <h3>Smart Expense Tracker</h3>
+      <div class="sub-meta">December 2024</div>
+      <ul>
+        <li>Tracked daily financial records using Java and MySQL.</li>
+        <li>Implemented full CRUD operations for expense records via JDBC.</li>
+        <li>Generated category-wise and monthly spending summaries.</li>
+      </ul>
+      <div class="project-tags"><span>Java</span><span>JDBC</span><span>MySQL</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Let's Connect</h2>
+    <p>I'm open to software development roles — click below to email me directly on Gmail.</p>
+    <a class="btn btn-fill"
+       href="https://mail.google.com/mail/?view=cm&fs=1&to=gairolapriyanshu56@gmail.com&su=Opportunity%20for%20you&body=Hi%20Priyanshu%2C%0A%0A"
+       target="_blank" rel="noopener noreferrer">
+      Message Me on Gmail
+    </a>
+  </div>
+</section>
+
+<footer>© 2026 Priyanshu Gairola · Dehradun, Uttarakhand.</footer>
+
+</body>
+</html>
